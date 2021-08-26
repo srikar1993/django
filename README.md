@@ -1,5 +1,4 @@
 # DJango
-# -------
 1. Hello World
 2. Templates and Static files
 3. Models and Databases
