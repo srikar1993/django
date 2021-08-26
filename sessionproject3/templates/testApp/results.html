@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        .hello{
+            margin:100px;
+        }
+        h1{
+            color:blueviolet;
+        }
+        li{
+            color:burlywood;
+            font-size:1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="hello container jumbotron" align="center">
+        <h1>Welcome to Session Project</h1>
+        {% if request.session.items %}
+            {% for key,value in request.session.items %}
+                <ul>
+                    <li>{{key | upper}}: {{value | title}}</li>
+                </ul>
+            {% endfor %}
+        {% else %}
+            <p>No Information Available</p>
+        {% endif %}
+        <hr>
+    </div>
+</body>
+</html>

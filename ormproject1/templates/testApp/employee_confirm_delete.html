@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Are you sure you want to delete???</h1>
+    <form method="post">
+        {% csrf_token %}
+        <span>
+            <input type="submit" value="Yes! Do It!!!" class="btn btn-danger">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/home" class="btn btn-success">No! Go Back!!!</a>
+        </span>
+    </form>
+{% endblock %}

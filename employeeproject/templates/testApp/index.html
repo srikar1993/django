@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 20px;">
+            <h1>Employee Information</h1>
+                {% if empList %}
+                    <table class="container table table-striped table-dark">
+                        <thead>
+                            <th>EMP NO</th>
+                            <th>EMP NAME</th>
+                            <th>EMP SALARY</th>
+                            <th>EMP ADDRESS</th>
+                        </thead>
+                        {% for emp in empList %}
+                            <tr>
+                                <td>{{emp.empNo}}</td>
+                                <td>{{emp.empName}}</td>
+                                <td>{{emp.empSal}}</td>
+                                <td>{{emp.empAddr}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No Employee found</p>
+                {% endif %}
+        </div>
+    </div>
+</body>
+</html>

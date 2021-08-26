@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORM - CRUD Operations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .hello{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container hello" align="center">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="/home" class="navbar-brand">Srikar</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li> <a href="/create">Create</a> </li>
+                        <li> <a href="/retrieve">Retrieve</a> </li>
+                        <li> <a href="/orm1">ORM1</a> </li>
+                        <li> <a href="/orm2">ORM2</a> </li>
+                        <li> <a href="/orm3">ORM3</a> </li>
+                        <li> <a href="/ormor">ORM_OR</a> </li>
+                        <li> <a href="/ormand">ORM_AND</a> </li>
+                        <li> <a href="/ormunion">ORM_UNION</a> </li>
+                        <li> <a href="/ormexclude">ORM_EXCLUDE</a> </li>
+                        <li> <a href="/ormvalueslist">ORM_VALUES_LIST</a> </li>
+                        <li> <a href="/ormvalues">ORM_VALUES</a> </li>
+                        <li> <a href="/ormonly">ORM_ONLY</a> </li>
+                        <li> <a href="/ormorderby">ORM_ORDERBY</a> </li>
+                        <li> <a href="/ormagg">ORM_AGGREGATE</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container hello " align="center" style="margin-top:150px;">
+        {% block base_block %}
+        {% endblock %}
+    </div>
+    <!-- <div class="container hello" align="center" style="margin-bottom:50px;">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="/home" class="navbar-brand">Srikar</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li> <a href="/create">Create</a> </li>
+                        <li> <a href="/retrieve">Retrieve</a> </li>
+                        <li> <a href="/orm1">ORM1</a> </li>
+                        <li> <a href="/orm2">ORM2</a> </li>
+                        <li> <a href="/orm3">ORM3</a> </li>
+                        <li> <a href="/ormor">ORM_OR</a> </li>
+                        <li> <a href="/ormand">ORM_AND</a> </li>
+                        <li> <a href="/ormunion">ORM_UNION</a> </li>
+                        <li> <a href="/ormexclude">ORM_EXCLUDE</a> </li>
+                        <li> <a href="/ormvalueslist">ORM_VALUES_LIST</a> </li>
+                        <li> <a href="/ormvalues">ORM_VALUES</a> </li>
+                        <li> <a href="/ormonly">ORM_ONLY</a> </li>
+                        <li> <a href="/ormorderby">ORM_ORDERBY</a> </li>
+                        <li> <a href="/ormagg">ORM_AGGREGATE</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> -->
+</body>
+</html>

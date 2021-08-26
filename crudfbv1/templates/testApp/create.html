@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h2>Add New Employee here...</h2><hr>
+    <form method="post">
+        <table class="table table-sm table-striped table-borderless" style="width: 30%">
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Add Employee" class="btn btn-success">
+        <hr>
+    </form>
+{% endblock %}

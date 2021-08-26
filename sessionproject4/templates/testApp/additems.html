@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Add Item Form</h1>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Add Item">
+    </form>
+    <br>
+    <a href="/display" class="btn btn-warning">Display Items</a>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load blog_tags %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title_block %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="content">
+        {% block content_block %}
+        {% endblock %}
+    </div>
+    <div class="sidebar">
+        <h2>Welcome to Srikar's Blog</h2><hr style="width:70%;" align="left"><br>
+        <h4>Total number of published posts: <span id="post_count">{% my_tag %}</span></h4>
+        <br>
+        <h3>Latest Posts:</h3>
+        {% show_latest_posts 5 %}
+        <h3>Most Commented Post:</h3>
+        {% get_most_commented_posts as most_commented_post %}
+            <ul>
+                {% for post in most_commented_post %}
+                    <li><a href="{{post.get_absolute_url}}">{{post.title | title}}</a></li>
+                {% endfor %}
+            </ul>
+    </div>
+</body>
+</html>

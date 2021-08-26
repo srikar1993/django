@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+    {% block title_block %}
+        {{post.title}}
+    {% endblock %}
+
+    {% block content_block %}
+        <h1>{{post.title | upper}}!!!</h1>
+        <p id="date">Published on {{post.publish}} by {{post.author | title}} </p>
+        <p>{{post.body | linebreaks}}</p>
+        <br>
+        <div class = "container" align="center">
+            <span>
+                <a href="/email/post/{{post.id}}" class="btn btn-success">Share Post By Mail</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/home" class="btn btn-warning">Home</a>
+            </span>
+        </div>
+        {% with comments.count as comments_count %}
+            <h2>{{comments_count}} Comment{{comments_count | pluralize}} available...</h2>
+        {% endwith %}
+        {% if comments %}
+            {% for comment in comments %}
+                <h3>Comment By "{{comment.name}}" on {{comment.created}}</h3>
+                <h4>{{comment.body | linebreaks}}</h4>
+                <hr style="width:30%">
+            {% endfor %}
+        {% else %}
+            <h4>Be the first to comment!!!</h4>
+        {% endif %}
+
+        {% if comment_submit %}
+            <h2>Thank you for submitting your comments:)</h2>
+        {% else %}
+            <form method="post">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Add Comment" class="btn btn-success">
+            </form>
+        {% endif %}
+    {% endblock %}

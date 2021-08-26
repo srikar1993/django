@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>{{book.title}} Information</h1>
+    <h2>Author: {{book.author}}</h2>
+    <h3>Pages: {{book.pages}}</h3>
+    <h4>Price: {{book.price}}</h4>
+    <hr>
+    <a href="/home" class="btn btn-primary">Home</a>
+{% endblock %}

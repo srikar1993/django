@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYD JOBS</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+</head>
+<body>
+    <div class="container" style="margin-top: 20px;">
+        <div class="jumbotron container">
+            <h1 class="first">Welcome to Jobs Portal
+                <span><a href="/home" class="btn btn-info">Home</a></span>
+            </h1>
+            {% if hyd_jobList %}
+                <table class="table table-striped table-dark table-hover">
+                    <thead>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Job Title</th>
+                        <th>Qualification</th>
+                    </thead>
+                    {% for hyd in hyd_jobList %}
+                        <tbody>
+                            <tr>
+                                <td>{{hyd.date}}</td>
+                                <td>{{hyd.company}}</td>
+                                <td>{{hyd.job_title}}</td>
+                                <td>{{hyd.qualification}}</td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            {% else %}
+                <p>No information available...</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>List View</h1>
+    <hr>
+    {% if employee_list %}
+        <h4>{{employee_list.count}} records availble...</h4>
+        <table class="table table-striped table-hover" style="width: auto;">
+            <thead>
+                <th>ID</th>
+                <th>ENo</th>
+                <th>EName</th>
+                <th>ESal</th>
+                <th>EBonus</th>
+                <th>ECity</th>
+                <th colspan="2" style="text-align: center;">Actions</th>
+            </thead>
+            {% for emp in employee_list %}
+                <tbody>
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.eno}}</td>
+                        <td> <a href="/single/{{emp.id}}" class="btn btn-success"> {{emp.ename}} </a> </td>
+                        <td>{{emp.esal}}</td>
+                        <td>{{emp.ebonus}}</td>
+                        <td>{{emp.ecity}}</td>
+                        <td> <a href="/update/{{emp.id}}" class="btn btn-warning">Update</a> </td>
+                        <td> <a href="/delete/{{emp.id}}" class="btn btn-danger">Delete</a> </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>No records available...</h2>
+    {% endif %}
+    <hr>
+    <a href="/home" class="btn btn-primary">Home</a> <span><a href="/create" class="btn btn-info">Add Employee</a></span>
+{% endblock %}

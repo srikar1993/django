@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Aggregate functions on Employee Salary!!!</h1>
+    <table class="table table-striped table-hover" style="width:auto;">
+        <thead>
+            <th>Function</th>
+            <th>Value</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sum</td>
+                <td>{{sum.esal__sum}}</td>
+            </tr>
+            <tr>
+                <td>Avg</td>
+                <td>{{avg.esal__avg}}</td>
+            </tr>
+            <tr>
+                <td>Max</td>
+                <td>{{max.esal__max}}</td>
+            </tr>
+            <tr>
+                <td>Min</td>
+                <td>{{min.esal__min}}</td>
+            </tr>
+            <tr>
+                <td>Count</td>
+                <td>{{count.esal__count}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

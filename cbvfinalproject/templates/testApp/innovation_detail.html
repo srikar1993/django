@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Welcome to Innovator's website</h1><hr>
+    <table class="table table-default" style="width:auto;">
+        <thead>
+            <th>Innovation</th>
+            <th>Innovator</th>
+            <th>Year</th>
+            <th colspan="2" style="text-align:center;">Actions</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{innovation.innovation}}</td>
+                <td>{{innovation.innovator}}</td>
+                <td>{{innovation.year}}</td>
+                <td> <a href="/update/{{innovation.id}}" class="btn btn-info">Update</a> </td>
+                <td> <a href="/delete/{{innovation.id}}" class="btn btn-danger">Delete</a> </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <span>
+        <a href="/retrieve" class="btn btn-info">All Innovations</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/home" class="btn btn-warning">Home</a>
+    </span>
+{% endblock %}

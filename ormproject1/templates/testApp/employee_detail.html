@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>List View</h1>
+    <hr>
+    {% if employee %}
+        <table class="table table-striped table-hover" style="width: auto;">
+            <thead>
+                <th>ID</th>
+                <th>ENo</th>
+                <th>EName</th>
+                <th>ESal</th>
+                <th>EBonus</th>
+                <th>ECity</th>
+                <th colspan="2" style="text-align: center;">Actions</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.eno}}</td>
+                    <td>{{employee.ename}}</td>
+                    <td>{{employee.esal}}</td>
+                    <td>{{employee.ebonus}}</td>
+                    <td>{{employee.ecity}}</td>
+                    <td> <a href="/update/{{employee.id}}" class="btn btn-warning">Update</a> </td>
+                    <td> <a href="/delete/{{employee.id}}" class="btn btn-danger">Delete</a> </td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <h2>No records available...</h2>
+    {% endif %}
+    <hr>
+    <a href="/home" class="btn btn-primary">Home</a> <span><a href="/create" class="btn btn-info">Add Employee</a></span>
+{% endblock %}

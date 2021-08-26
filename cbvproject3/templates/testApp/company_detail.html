@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Welcome to {{company.name}}!!!</h1>
+    <h2>Ceo: {{company.ceo}}</h2>
+    <h3>Address: {{company.location}}</h3>
+    <hr>
+    <span>
+        <a href="/update/{{company.id}}" class="btn btn-warning">Update Details</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/retrieve" class="btn btn-info">List of companies</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/delete/{{company.id}}" class="btn btn-danger">Delete Company</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/home" class="btn btn-primary">Home</a>
+    </span>
+{% endblock %}

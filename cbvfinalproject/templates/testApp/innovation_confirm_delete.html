@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Welcome to Innovator's website</h1><hr>
+    <h2>Are you sure you want to delete innovation???</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Yes! I am Sure" class="btn btn-danger">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/single/{{innovation.id}}" class="btn btn-success">No! Go Back</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <form method="post">
+        <label for="eno">ENO</label>
+        <input type="number" name="eno" id="eno" value={{employee.eno}}><br>
+        <label for="ename">ENAME</label>
+        <input type="text" name="ename" id="ename" value={{employee.ename}}> <br>
+        <label for="esal">ESAL</label>
+        <input type="number" name="esal" id="esal" value={{employee.esal}}><br>
+        <label for="eaddr">EADDR</label>
+        <input type="text" name="eaddr" id="eaddr" value={{employee.eaddr}}><br>
+        {% csrf_token %}
+        <input type="submit" value="Update Employee"><hr>
+    </form>
+{% endblock %}

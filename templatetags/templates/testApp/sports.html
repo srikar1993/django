@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block%}
+    <h1>Welcome to Template Inheritance</h1>
+    <h2>This is Sports Page</h2>
+    {% load custom_filters %}
+    {% if sports_list %}
+        {% for sports in sports_list %}
+            <ul>
+                <li>Sport Name: {{sports.name | alt_upper}}</li>
+                <li>Number of Players: {{sports.players}}</li>
+            </ul>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <h2>No sports available</h2>
+    {% endif %}
+{% endblock %}

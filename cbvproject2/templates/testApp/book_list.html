@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    {% for book in book_list%}
+        <h2> <a href="/single/{{book.id}}" class="btn btn-primary">{{book.title}}</a> </h2>
+    {% endfor %}
+    <hr>
+    <a href="/create" class="btn btn-primary">Add Book</a>
+{% endblock %}

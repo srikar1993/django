@@ -1,0 +1,21 @@
+h1{
+    color: #852852
+}
+h2{
+    color: #EE2625;
+}
+h3{
+    color: #f9829b;
+}
+h4{
+    color: #4B0082;
+}
+h3:hover{
+    color: #695be7;
+    font-size: 100px;
+}
+img{
+    width: 1342px;
+    height: 710px;
+    margin: auto;
+}

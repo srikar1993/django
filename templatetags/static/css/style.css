@@ -1,0 +1,19 @@
+h1{
+    color: whitesmoke;
+    background-color: chocolate;
+    width:fit-content;
+}
+
+h2{
+    color: grey;
+    background-color:darkblue;
+    width: fit-content;
+}
+
+li{
+    color:cornflowerblue;
+}
+
+hr{
+    color:coral;
+}

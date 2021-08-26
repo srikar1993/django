@@ -1,0 +1,19 @@
+.jumbotron{
+    margin-top: 20px;
+}
+h1{
+    background-color:antiquewhite;
+    color:brown;
+}
+h2{
+    background-color:coral;
+    color: white;
+}
+h3{
+    background-color:fuchsia;
+    color:floralwhite;
+}
+.right{
+    float: right;
+    align-items: right;
+}

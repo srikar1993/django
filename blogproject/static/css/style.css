@@ -1,0 +1,35 @@
+.content{
+    width: 60%;
+    height: 100%;
+    float: left;
+    padding-left: 30px;
+    background-color:cornsilk;
+}
+.sidebar{
+    width: 40%;
+    height: 100%;
+    float: right;
+    padding-left: 30px;
+    background-color:burlywood;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px groove darkblue;
+    padding-bottom: 10px;
+}
+h2{
+    color:brown;
+}
+#date{
+    font-style: normal;
+    color:blueviolet;
+}
+.date1{
+    font-style: normal;
+    color:fuchsia;
+}
+#post_count{
+    font-size: 40px;
+    font-weight: bold;
+    color:crimson;
+}

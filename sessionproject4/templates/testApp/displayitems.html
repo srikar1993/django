@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'testApp/base.html' %}
+{% block base_block %}
+    <h1>Your Items Information</h1>
+    {% if request.session %}
+        <table class="table table-striped table-dark">
+            <thead>
+                <th>Name</th>
+                <th>Quantity</th>
+            </thead>
+            {% for key,value in request.session.items %}
+                <tbody>
+                    <tr>
+                        <td>{{key}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No items available</p>
+    {% endif %}
+    <br>
+    <a href="/additems" class="btn btn-primary">Home</a>
+{% endblock %}
